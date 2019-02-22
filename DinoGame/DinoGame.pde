@@ -1,7 +1,7 @@
 //Globals
 int nextConnectionNo = 1000;
 Population pop;
-int frameSpeed = 60;
+int frameSpeed = 600;
 
 
 boolean showBestEachGen = false;
@@ -47,7 +47,7 @@ ArrayList<Integer> randomAdditionHistory = new ArrayList<Integer>();
 
 void setup() {
 
-  frameRate(60);
+  frameRate(frameSpeed);
   fullScreen();
   dinoRun1 = loadImage("dinorun0000.png");
   dinoRun2 = loadImage("dinorun0001.png");
@@ -157,6 +157,9 @@ void writeInfo() {
     textAlign(RIGHT);
 
     text("Gen: " + (pop.gen +1), width -40, height-30);
+    
+    text("Best Score: " + (pop.bestScore), width -520, height-30);
+    text("Alive: " + (pop.alive()), width -220, height-30);
     textSize(20);
     int x = 580;
     text("Distace to next obstacle", x, 18+44.44444);

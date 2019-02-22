@@ -50,6 +50,17 @@ class Population {
     return true;
   }
   //------------------------------------------------------------------------------------------------------------------------------------------
+  //returns number of alive players
+  int alive() {
+    int alive = 0;
+    for (int i = 0; i< pop.size(); i++) {
+      if (!pop.get(i).dead) {
+        alive++;
+      }
+    }
+    return alive;
+  }
+  //------------------------------------------------------------------------------------------------------------------------------------------
   //sets the best player globally and for this gen
   void setBestPlayer() {
     Player tempBest =  species.get(0).players.get(0);
